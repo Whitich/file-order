@@ -8,10 +8,10 @@ Requires Python 3.11+ with Tkinter (included in the standard Windows Python inst
 
 ```powershell
 python -m pip install -r requirements.txt
-python DosyaDuzeni.py
+python file_order.py
 ```
 
-You can also double-click `Start.bat` (or the compatibility launcher `Baslat.bat`).
+You can also double-click `Start.bat`.
 
 ## Features
 
@@ -43,7 +43,7 @@ Settings and history stay under `%LOCALAPPDATA%\DosyaDuzeni`. `settings.json` an
 
 Choose a source and a destination on the same disk, analyze, review the plan, and apply it. For duplicates, use the dedicated buttons in **Duplicate files and projects**; scanning does not move or delete files. Keep one copy per group, review, then choose quarantine or Recycle Bin.
 
-Detailed Turkish guide: [Kullanim.md](Kullanim.md).
+Detailed Turkish guide: [USER_GUIDE_TR.md](USER_GUIDE_TR.md).
 
 ## Limits
 

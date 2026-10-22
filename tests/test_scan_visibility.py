@@ -1,7 +1,7 @@
 import os,sys,tempfile,time,threading
 from pathlib import Path
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
-import DosyaDuzeni as m
+import file_order as m
 
 with tempfile.TemporaryDirectory() as tmp:
     p=Path(tmp);os.environ['LOCALAPPDATA']=str(p/'local')

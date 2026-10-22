@@ -1,7 +1,7 @@
 import sys,tempfile,gzip,json
 from pathlib import Path
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
-import duzen_engine as e
+import organizer_engine as e
 
 def write(p,data=b'data'):
     p.parent.mkdir(parents=True,exist_ok=True);p.write_bytes(data)

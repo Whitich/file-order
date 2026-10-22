@@ -9,7 +9,7 @@ import time
 import traceback
 import localization as i18n
 from localization import tr
-import duzen_engine as engine
+import organizer_engine as engine
 from pathlib import Path
 from datetime import datetime
 import tkinter as tk

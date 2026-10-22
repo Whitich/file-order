@@ -1,8 +1,8 @@
 import os,sys,tempfile,time
 from pathlib import Path
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
-import duzen_engine as e
-import DosyaDuzeni as m
+import organizer_engine as e
+import file_order as m
 
 with tempfile.TemporaryDirectory() as tmp:
     p=Path(tmp);source=p/'documents';source.mkdir();target=p/'target'

@@ -1,4 +1,4 @@
 @echo off
 cd /d "%~dp0"
-python DosyaDuzeni.py
+python file_order.py
 if errorlevel 1 pause

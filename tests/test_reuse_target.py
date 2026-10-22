@@ -1,8 +1,8 @@
 import sys,os,tempfile
 from pathlib import Path
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
-import duzen_engine as e
-import DosyaDuzeni as m
+import organizer_engine as e
+import file_order as m
 def write(p,data=b'new'):
     p.parent.mkdir(parents=True,exist_ok=True);p.write_bytes(data)
 def apply(app,source,target):

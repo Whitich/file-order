@@ -2,8 +2,8 @@ import sys, os, tempfile, json
 from pathlib import Path
 from unittest.mock import patch
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
-import duzen_engine as e
-import DosyaDuzeni as m
+import organizer_engine as e
+import file_order as m
 
 def write(p,b=b'data'):
     p.parent.mkdir(parents=True,exist_ok=True); p.write_bytes(b)

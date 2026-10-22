@@ -3,8 +3,8 @@ from pathlib import Path
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
 os.environ.pop('FILE_ORDER_LANGUAGE',None)
 import localization as loc
-import DosyaDuzeni as appmod
-import duzen_engine as engine
+import file_order as appmod
+import organizer_engine as engine
 
 def write(p,data=b'data'):
     p.parent.mkdir(parents=True,exist_ok=True);p.write_bytes(data)

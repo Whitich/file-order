@@ -27,6 +27,8 @@ FOLDERS = {
 }
 
 _PAIRS = r'''Dosya Düzeni • Güvenli tarama ve düzenleme|File Order • Safe scanning and organization
+Güvenli tarama ve düzenleme|Safe scanning and organization
+Dil|Language
 DOSYA DÜZENİ  /  4.0|FILE ORDER  /  4.0
 Dil değişti. Yeni dosya yolları için yeniden analiz edin.|Language changed. Analyze again to generate destination paths in this language.
 Önce incele. Güvenle düzenle. İstediğinde geri al.|Inspect first. Organize safely. Undo when needed.

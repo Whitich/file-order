@@ -1,6 +1,6 @@
-# File Order / Dosya Düzeni
+# File Order
 
-Windows desktop organizer and exact duplicate finder with English and Turkish localization. Version 4.0. English is the default; the application remembers your language selection.
+Windows desktop organizer and exact duplicate finder with English and Turkish localization. Version 4.1. English is the default; the application remembers your language selection.
 
 ## Run
 
@@ -24,7 +24,7 @@ You can also double-click `Start.bat` (or the compatibility launcher `Baslat.bat
 
 ## Language and generated names
 
-Use **Language / Dil** to select **English** or **Türkçe**. Selection is saved locally. Switching language clears the current preview so destination paths are regenerated safely.
+Use **Language** (or **Dil** in Turkish) to select **English** or **Türkçe**. Selection is saved locally. Switching language clears the current preview so destination paths are regenerated safely.
 
 | Generated item | English | Türkçe |
 | --- | --- | --- |

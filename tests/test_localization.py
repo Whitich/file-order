@@ -15,6 +15,13 @@ with tempfile.TemporaryDirectory() as temp:
     assert loc.LANGUAGE=='en' and app.language_value.get()=='English'
     assert app.analysis_button['text']=='Analyze folder'
     assert tk.title().startswith('File Order')
+    style=appmod.ttk.Style(tk)
+    for state in [('readonly',),('readonly','focus'),('readonly','selected')]:
+        foreground=style.lookup('Language.TCombobox','foreground',state)
+        background=style.lookup('Language.TCombobox','fieldbackground',state)
+        assert foreground=='#e5e7eb' and background=='#1f2937'
+        assert foreground!=background
+        assert style.lookup('Language.TCombobox','selectforeground',state)=='white'
     # Check all initial labels, tabs, headings and variable-bound status messages.
     turkish=re.compile('[çğıöşüÇĞİÖŞÜ]')
     def inspect(widget):
@@ -48,6 +55,7 @@ with tempfile.TemporaryDirectory() as temp:
     app.language_value.set('Türkçe');app.change_language()
     app=tk.file_order_app
     assert loc.LANGUAGE=='tr' and app.analysis_button['text']=='Klasörü analiz et'
+    assert tk.title().startswith('File Order')
     assert json.loads(app.settings_path.read_text())['language']=='tr'
     assert journal in [item[0] for item in app.history_rows.values()]
     assert appmod.restore_journal(journal)==len(moves)

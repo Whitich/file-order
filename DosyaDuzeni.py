@@ -157,7 +157,7 @@ class App:
     def __init__(self, root):
         i18n.load_language()
         self.root = root
-        root.title(tr('Dosya Düzeni • Güvenli tarama ve düzenleme'))
+        root.title('File Order • '+tr('Güvenli tarama ve düzenleme'))
         root.geometry(f'{min(1280,root.winfo_screenwidth()-40)}x{min(860,root.winfo_screenheight()-100)}')
         root.minsize(1050, 700)
         self.apply_theme()
@@ -189,11 +189,11 @@ class App:
         top.pack(fill='x')
         language_row=ttk.Frame(top);language_row.pack(fill='x')
         self.language_value=tk.StringVar(value=tr('English' if i18n.LANGUAGE=='en' else 'Türkçe'))
-        self.language_combo=ttk.Combobox(language_row,textvariable=self.language_value,values=('English','Türkçe'),state='readonly',width=12)
+        self.language_combo=ttk.Combobox(language_row,textvariable=self.language_value,values=('English','Türkçe'),state='readonly',style='Language.TCombobox',exportselection=False,width=12)
         self.language_combo.pack(side='right')
         self.language_combo.bind('<<ComboboxSelected>>',self.change_language)
-        ttk.Label(language_row,text=tr('Language / Dil')).pack(side='right',padx=8)
-        ttk.Label(top, text=tr('DOSYA DÜZENİ  /  4.0'), style='Title.TLabel').pack(anchor='w')
+        ttk.Label(language_row,text=tr('Dil')).pack(side='right',padx=8)
+        ttk.Label(top, text='FILE ORDER  /  4.1', style='Title.TLabel').pack(anchor='w')
         ttk.Label(top, text=tr('Önce incele. Güvenle düzenle. İstediğinde geri al.'), style='Muted.TLabel').pack(anchor='w', pady=(0,12))
         self.summary = tk.StringVar(value=tr('Kopyasız taşıma  •  Projeler bütün kalır  •  Tarihli işlem geçmişi'))
         ttk.Label(top, textvariable=self.summary, style='Card.TLabel', padding=12).pack(fill='x', pady=(0,10))
@@ -317,6 +317,18 @@ class App:
         style.configure('Accent.TButton',background=accent,foreground='white')
         style.map('Accent.TButton',background=[('active','#1d4ed8')])
         style.configure('TEntry',fieldbackground=card,foreground=text,insertcolor=text,padding=7)
+        style.configure('Language.TCombobox',fieldbackground=card,background=card,foreground=text,
+                        arrowcolor=text,selectbackground=accent,selectforeground='white',padding=6)
+        style.map('Language.TCombobox',
+                  fieldbackground=[('disabled',card),('readonly',card)],
+                  foreground=[('disabled',muted),('readonly',text)],
+                  background=[('active','#374151'),('readonly',card)],
+                  selectbackground=[('readonly',accent)],
+                  selectforeground=[('readonly','white')])
+        self.root.option_add('*TCombobox*Listbox.background',card)
+        self.root.option_add('*TCombobox*Listbox.foreground',text)
+        self.root.option_add('*TCombobox*Listbox.selectBackground',accent)
+        self.root.option_add('*TCombobox*Listbox.selectForeground','white')
         style.configure('Treeview',background=card,fieldbackground=card,foreground=text,rowheight=32,borderwidth=0)
         style.configure('Treeview.Heading',background='#273449',foreground=text,padding=8)
         style.map('Treeview',background=[('selected','#1d4ed8')],foreground=[('selected','white')])
